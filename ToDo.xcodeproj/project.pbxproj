@@ -21,6 +21,8 @@
 		8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */; };
 		857121912068699900265CB7 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857121902068699900265CB7 /* ItemListViewController.swift */; };
 		DA1C8299206888A700D10A28 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C8298206888A700D10A28 /* ItemListDataProvider.swift */; };
+		DA1C829B20689CBE00D10A28 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */; };
+		DA1C829D2068A76000D10A28 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C829C2068A76000D10A28 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTest.swift; sourceTree = "<group>"; };
 		857121902068699900265CB7 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		DA1C8298206888A700D10A28 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
+		DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
+		DA1C829C2068A76000D10A28 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */,
+				DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				857121902068699900265CB7 /* ItemListViewController.swift */,
 				DA1C8298206888A700D10A28 /* ItemListDataProvider.swift */,
+				DA1C829C2068A76000D10A28 /* ItemCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				854DE7202067179A00B0750F /* Location.swift in Sources */,
 				854DE71E2067110B00B0750F /* ToDoItem.swift in Sources */,
 				857121912068699900265CB7 /* ItemListViewController.swift in Sources */,
+				DA1C829D2068A76000D10A28 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +335,7 @@
 				854DE72420672F3100B0750F /* ItemManagerTests.swift in Sources */,
 				854DE7222067180400B0750F /* LocationTests.swift in Sources */,
 				8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */,
+				DA1C829B20689CBE00D10A28 /* ItemListDataProviderTests.swift in Sources */,
 				854DE71B2067109700B0750F /* ToDoItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
