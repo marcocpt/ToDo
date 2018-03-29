@@ -23,6 +23,7 @@
 		DA1C8299206888A700D10A28 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C8298206888A700D10A28 /* ItemListDataProvider.swift */; };
 		DA1C829B20689CBE00D10A28 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */; };
 		DA1C829D2068A76000D10A28 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C829C2068A76000D10A28 /* ItemCell.swift */; };
+		DA6221B3206CAC7C00694DA1 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		DA1C8298206888A700D10A28 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
 		DA1C829C2068A76000D10A28 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */,
 				DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */,
+				DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				854DE72420672F3100B0750F /* ItemManagerTests.swift in Sources */,
+				DA6221B3206CAC7C00694DA1 /* ItemCellTests.swift in Sources */,
 				854DE7222067180400B0750F /* LocationTests.swift in Sources */,
 				8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */,
 				DA1C829B20689CBE00D10A28 /* ItemListDataProviderTests.swift in Sources */,
