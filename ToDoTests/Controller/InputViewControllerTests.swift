@@ -66,6 +66,28 @@ class InputViewControllerTests: XCTestCase {
     }
     XCTAssertTrue(actions.contains("save"))
   }
+  
+  // FIXME: 获得地址失败
+  func test_Geocoder_FetchesCoordinates() {
+    let geocoderAnswered = expectation(description: "Geocoder")
+    CLGeocoder().geocodeAddressString("Infinite Loop, Cupertino") {
+      (placemarks, error) -> Void in
+      let coordinate = placemarks?.first?.location?.coordinate
+      guard let latitude = coordinate?.latitude else {
+        XCTFail()
+        return
+      }
+      guard let longitude = coordinate?.longitude else {
+        XCTFail()
+        return
+      }
+      XCTAssertEqual(latitude, 37.3316, accuracy: 0.0001)
+      XCTAssertEqual(longitude, -122.0300, accuracy: 0.0001)
+      geocoderAnswered.fulfill()
+    }
+    waitForExpectations(timeout: 3, handler: nil)
+  }
+  
 }
 
 // MARK: - test has item
