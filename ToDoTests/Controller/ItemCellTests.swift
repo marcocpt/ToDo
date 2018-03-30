@@ -59,7 +59,7 @@ class ItemCellTests: XCTestCase {
     cell.configCell(with: item)
     XCTAssertEqual(cell.titleLabel.text, "Foo")
     XCTAssertEqual(cell.locationLabel.text, "Bar")
-    XCTAssertEqual(cell.dateLabel.text, "02/22/2016")
+    XCTAssertEqual(cell.dateLabel.text, "02/22/2016 22:07")
   }
   
   func test_Title_WhenItemIsChecked_IsStrokeThrough() {

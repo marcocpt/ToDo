@@ -58,7 +58,7 @@ class DetailViewControllerTests: XCTestCase {
     sut.beginAppearanceTransition(true, animated: true)
     sut.endAppearanceTransition()
     XCTAssertEqual(sut.titleLabel.text, "Bar")
-    XCTAssertEqual(sut.dateLabel.text, "02/22/2016")
+    XCTAssertEqual(sut.dateLabel.text, "02/22/2016 22:07")
     XCTAssertEqual(sut.locationLabel.text, "Foo")
     XCTAssertEqual(sut.descriptionLabel.text, "Baz")
     XCTAssertEqual(sut.mapView.centerCoordinate.latitude,

@@ -10,19 +10,13 @@ import UIKit
 import MapKit
 
 class DetailViewController: UIViewController {
-  @IBOutlet var titleLabel: UILabel!
-  @IBOutlet var locationLabel: UILabel!
-  @IBOutlet var dateLabel: UILabel!
-  @IBOutlet var mapView: MKMapView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var descriptionLabel: UILabel!
   
   var itemInfo: (ItemManager, Int)?
-  
-  let dateFormatter: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yyyy"
-    return dateFormatter
-  }()
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -33,7 +27,7 @@ class DetailViewController: UIViewController {
     descriptionLabel.text = item.itemDescription
     if let timestamp = item.timestamp {
       let date = Date(timeIntervalSince1970: timestamp)
-      dateLabel.text = dateFormatter.string(from: date)
+      dateLabel.text = Date.dateFormatter.string(from: date)
     }
     if let coordinate = item.location?.coordinate {
       let region = MKCoordinateRegionMakeWithDistance(coordinate,
