@@ -44,5 +44,23 @@ class ItemListViewControllerTest: XCTestCase {
                    sut.tableView.delegate as? ItemListDataProvider)
   }
   
+  func test_ItemListViewController_HasAddBarButtonWithSelfAsTarget() {
+    let target = sut.navigationItem.rightBarButtonItem?.target
+    XCTAssertEqual(target as? UIViewController, sut)
+  }
   
+  func test_AddItem_PresentsAddItemViewController() {
+    XCTAssertNil(sut.presentedViewController)
+    guard let addButton = sut.navigationItem.rightBarButtonItem else
+    { XCTFail(); return }
+    guard let action = addButton.action else { XCTFail(); return }
+    
+    // we have just instantiated the View Controller, but it is not shown anywhere
+    UIApplication.shared.keyWindow?.rootViewController = sut
+    sut.performSelector(onMainThread: action,
+                        with: addButton,
+                        waitUntilDone: true)
+    XCTAssertNotNil(sut.presentedViewController)
+    XCTAssertTrue(sut.presentedViewController is InputViewController)
+  }
 }

@@ -70,7 +70,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7kV-dG-yV1"/>
+                    <navigationItem key="navigationItem" id="7kV-dG-yV1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AIL-Lq-iQf">
+                            <connections>
+                                <action selector="addItem:" destination="BYZ-38-t0r" id="KdW-rp-KSb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataProvider" destination="Ur4-a8-5I7" id="vL8-cX-iI3"/>
                         <outlet property="tableView" destination="POw-nX-5jj" id="WDz-e0-M79"/>
