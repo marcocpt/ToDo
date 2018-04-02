@@ -69,7 +69,7 @@ class InputViewControllerTests: XCTestCase {
   
   func test_Geocoder_FetchesCoordinates() {
     let geocoderAnswered = expectation(description: "Geocoder")
-    CLGeocoder().geocodeAddressString("WuHan") {
+    CLGeocoder().geocodeAddressString("HongKong") {
       (placemarks, error) -> Void in
       let coordinate = placemarks?.first?.location?.coordinate
       guard let latitude = coordinate?.latitude else {
@@ -80,8 +80,8 @@ class InputViewControllerTests: XCTestCase {
         XCTFail()
         return
       }
-      XCTAssertEqual(latitude, 30.5843, accuracy: 0.0001)
-      XCTAssertEqual(longitude, 114.2986, accuracy: 0.0001)
+      XCTAssertEqual(latitude, 22.320048, accuracy: 0.0001)
+      XCTAssertEqual(longitude, 114.173355, accuracy: 0.0001)
       geocoderAnswered.fulfill()
     }
     waitForExpectations(timeout: 3, handler: nil)
