@@ -30,6 +30,7 @@
 		DA6221B3206CAC7C00694DA1 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */; };
 		DA6221B5206CE61400694DA1 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6221B4206CE61400694DA1 /* DetailViewControllerTests.swift */; };
 		DA6221B7206CE71400694DA1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6221B6206CE71400694DA1 /* DetailViewController.swift */; };
+		DA71E5E6207218E9001C4B63 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71E5E5207218E9001C4B63 /* StoryboardTests.swift */; };
 		DA8BFEB5206DEFFD0080C613 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BFEB4206DEFFD0080C613 /* APIClientTests.swift */; };
 		DA8BFEB7206DFF370080C613 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BFEB6206DFF370080C613 /* APIClient.swift */; };
 		DA95753E2071CD7C000F7EA7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95753D2071CD7C000F7EA7 /* Token.swift */; };
@@ -82,6 +83,7 @@
 		DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
 		DA6221B4206CE61400694DA1 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		DA6221B6206CE71400694DA1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DA71E5E5207218E9001C4B63 /* StoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
 		DA8BFEB4206DEFFD0080C613 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		DA8BFEB6206DFF370080C613 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		DA95753D2071CD7C000F7EA7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8571218C206868FA00265CB7 /* Controller */,
 				854DE7192067108800B0750F /* Model */,
 				DA8BFEB4206DEFFD0080C613 /* APIClientTests.swift */,
+				DA71E5E5207218E9001C4B63 /* StoryboardTests.swift */,
 				854DE7022067101700B0750F /* Info.plist */,
 			);
 			path = ToDoTests;
@@ -395,6 +398,7 @@
 				DA0AEB1B206DBD0F00A8BED4 /* InputViewControllerTests.swift in Sources */,
 				8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */,
 				DA6221B5206CE61400694DA1 /* DetailViewControllerTests.swift in Sources */,
+				DA71E5E6207218E9001C4B63 /* StoryboardTests.swift in Sources */,
 				DA8BFEB5206DEFFD0080C613 /* APIClientTests.swift in Sources */,
 				DA1C829B20689CBE00D10A28 /* ItemListDataProviderTests.swift in Sources */,
 				854DE71B2067109700B0750F /* ToDoItemTests.swift in Sources */,
