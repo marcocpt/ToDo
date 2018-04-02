@@ -64,7 +64,60 @@ class APIClientTests: XCTestCase {
     }
   }
   
+  func test_Login_WhenJSONIsInvalid_ReturnsError() {
+    let sut = APIClient()
+    let mockURLSession = MockURLSession(data: Data(),
+                                        urlResponse: nil,
+                                        error: nil)
+    sut.session = mockURLSession
+    let errorExpectation = expectation(description: "Error")
+    var catchedError: Error? = nil
+    sut.loginUser(withName: "Foo", password: "Bar") { (token, error) in
+      catchedError = error
+      errorExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1) { (error) in
+      XCTAssertNotNil(catchedError)
+    }
+  }
   
+  func test_Login_WhenDataIsNil_ReturnsError() {
+    let sut = APIClient()
+    let mockURLSession = MockURLSession(data: nil,
+                                        urlResponse: nil,
+                                        error: nil)
+    sut.session = mockURLSession
+    let errorExpectation = expectation(description: "Error")
+    var catchedError: Error? = nil
+    sut.loginUser(withName: "Foo", password: "Bar") { (token, error) in
+      catchedError = error
+      errorExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1) { (error) in
+      XCTAssertNotNil(catchedError)
+    }
+  }
+  
+  func test_Login_WhenResponseHasError_ReturnsError() {
+    let sut = APIClient()
+    let error = NSError(domain: "SomeError",
+                        code: 1234,
+                        userInfo: nil)
+    let jsonData = "{\"token\": \"1234567890\"}".data(using: .utf8)
+    let mockURLSession = MockURLSession(data: jsonData,
+                                        urlResponse: nil,
+                                        error: error)
+    sut.session = mockURLSession
+    let errorExpectation = expectation(description: "Error")
+    var catchedError: Error? = nil
+    sut.loginUser(withName: "Foo", password: "Bar") { (token, error) in
+      catchedError = error
+      errorExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 1) { (error) in
+      XCTAssertNotNil(catchedError)
+    }
+  }
 }
 
 
