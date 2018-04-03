@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+class ItemListDataProvider: NSObject, ItemManagerSettable,
+  UITableViewDataSource, UITableViewDelegate {
   var itemManager: ItemManager?
   
   func tableView(_ tableView: UITableView,

@@ -19,7 +19,10 @@ class ItemListViewControllerTest: XCTestCase {
     let viewController = storyboard.instantiateViewController(
       withIdentifier: "ItemListViewController")
     sut = viewController as! ItemListViewController
-    _ = sut.view
+    
+    // NOTE: trigger the call of viewDidLoad(). Never call viewDidLoad() directly.
+    sut.loadViewIfNeeded()
+    
   }
   
   override func tearDown() {
@@ -51,16 +54,66 @@ class ItemListViewControllerTest: XCTestCase {
   
   func test_AddItem_PresentsAddItemViewController() {
     XCTAssertNil(sut.presentedViewController)
+    perform_ItemListVC_addButton_action()
+    XCTAssertNotNil(sut.presentedViewController)
+
+    guard let inputViewController = sut.presentedViewController as?
+      InputViewController else { XCTFail(); return }
+    XCTAssertNotNil(inputViewController.titleTextField)
+  }
+  
+  func test_ItemListVC_SharesItemManagerWithInputVC() {
+    perform_ItemListVC_addButton_action()
+    guard let inputViewController =
+      sut.presentedViewController as? InputViewController else
+    { XCTFail(); return }
+    guard let inputItemManager = inputViewController.itemManager else
+    { XCTFail(); return }
+    XCTAssertTrue(sut.itemManager === inputItemManager)
+  }
+  
+  func test_ViewDidLoad_SetsItemManagerToDataProvider() {
+    XCTAssertTrue(sut.itemManager === sut.dataProvider.itemManager)
+  }
+  
+  func test_ViewWillAppear_ReloadData() {
+    let mockTableView = MockTableView()
+    sut.tableView = mockTableView
+    
+    // NOTE: A reminder: to trigger viewWillAppear(_:)
+    sut.beginAppearanceTransition(true, animated: true)
+    sut.endAppearanceTransition()
+//    sut.viewWillAppear(false)
+    XCTAssertTrue(mockTableView.isReloadData)
+  }
+}
+
+extension ItemListViewControllerTest {
+  func perform_ItemListVC_addButton_action(line: UInt = #line) {
     guard let addButton = sut.navigationItem.rightBarButtonItem else
     { XCTFail(); return }
     guard let action = addButton.action else { XCTFail(); return }
     
-    // we have just instantiated the View Controller, but it is not shown anywhere
+    // NOTE: we have just instantiated the View Controller, but it is not shown anywhere
     UIApplication.shared.keyWindow?.rootViewController = sut
     sut.performSelector(onMainThread: action,
                         with: addButton,
                         waitUntilDone: true)
-    XCTAssertNotNil(sut.presentedViewController)
-    XCTAssertTrue(sut.presentedViewController is InputViewController)
+    sut.performSelector(onMainThread: action,
+                        with: addButton,
+                        waitUntilDone: true)
   }
+}
+
+// MOCK --
+extension ItemListViewControllerTest {
+  class MockTableView: UITableView {
+    var isReloadData = false
+    
+    override func reloadData() {
+      super.reloadData()
+      isReloadData = true
+    }
+  }
+  
 }

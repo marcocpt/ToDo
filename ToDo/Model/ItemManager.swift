@@ -49,3 +49,7 @@ class ItemManager {
     toDoItems.append(item)
   }
 }
+
+protocol ItemManagerSettable {
+  var itemManager: ItemManager? { get set }
+}

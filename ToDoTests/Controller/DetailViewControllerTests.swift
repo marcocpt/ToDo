@@ -20,7 +20,7 @@ class DetailViewControllerTests: XCTestCase {
                                   bundle: nil)
     sut = storyboard.instantiateViewController(withIdentifier:
       "DetailViewController") as! DetailViewController
-    _ = sut.view
+    sut.loadViewIfNeeded()
   }
   
   override func tearDown() {

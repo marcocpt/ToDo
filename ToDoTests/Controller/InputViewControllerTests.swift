@@ -21,7 +21,7 @@ class InputViewControllerTests: XCTestCase {
                                   bundle: nil)
     sut = storyboard.instantiateViewController(
       withIdentifier: "InputViewController") as! InputViewController
-    _ = sut.view
+    sut.loadViewIfNeeded()
   }
   
   override func tearDown() {
@@ -118,6 +118,18 @@ extension InputViewControllerTests {
   func test_HasCancelButton() {
     XCTAssertNotNil(sut.cancelButton)
   }
+  
+  func testSave_DismissesViewController() {
+    let mockInputViewController = MockInputViewController()
+    mockInputViewController.titleTextField = UITextField()
+    mockInputViewController.dateTextField = UITextField()
+    mockInputViewController.locationTextField = UITextField()
+    mockInputViewController.addressTextField = UITextField()
+    mockInputViewController.descriptionTextField = UITextField()
+    mockInputViewController.titleTextField.text = "Test Title"
+    mockInputViewController.save()
+    XCTAssertTrue(mockInputViewController.dismissGotCalled)
+  }
 }
 
 // MARK: - Mock
@@ -141,6 +153,14 @@ extension InputViewControllerTests {
       { return CLLocation() }
       return CLLocation(latitude: coordinate.latitude,
                         longitude: coordinate.longitude)
+    }
+  }
+  
+  class MockInputViewController : InputViewController {
+    var dismissGotCalled = false
+    override func dismiss(animated flag: Bool,
+                          completion: (() -> Void)? = nil) {
+      dismissGotCalled = true
     }
   }
 }
