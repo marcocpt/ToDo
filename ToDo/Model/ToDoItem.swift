@@ -14,6 +14,10 @@ struct ToDoItem {
   let timestamp: Double?
   let location: Location?
   
+  var plistDict: [String:Any] {
+    return [:]
+  }
+  
   init(title: String,
        itemDescription: String? = nil,
        timestamp: Double? = nil,
@@ -23,6 +27,12 @@ struct ToDoItem {
     self.timestamp = timestamp
     self.location = location
   }
+  
+  init?(dict: [String:Any]) {
+    return nil
+  }
+  
+  
 }
 
 extension ToDoItem: Equatable {
