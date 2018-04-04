@@ -19,7 +19,7 @@
 		854DE72420672F3100B0750F /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DE72320672F3100B0750F /* ItemManagerTests.swift */; };
 		854DE72620672FA100B0750F /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DE72520672FA100B0750F /* ItemManager.swift */; };
 		85561B4A206D27E000D66DAE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85561B49206D27E000D66DAE /* MapKit.framework */; };
-		8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */; };
+		8571218E2068692800265CB7 /* ItemListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571218D2068692800265CB7 /* ItemListViewControllerTests.swift */; };
 		857121912068699900265CB7 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857121902068699900265CB7 /* ItemListViewController.swift */; };
 		DA0AEB1B206DBD0F00A8BED4 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AEB1A206DBD0F00A8BED4 /* InputViewControllerTests.swift */; };
 		DA0AEB1D206DBD4D00A8BED4 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AEB1C206DBD4D00A8BED4 /* InputViewController.swift */; };
@@ -72,7 +72,7 @@
 		854DE72320672F3100B0750F /* ItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManagerTests.swift; sourceTree = "<group>"; };
 		854DE72520672FA100B0750F /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		85561B49206D27E000D66DAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTest.swift; sourceTree = "<group>"; };
+		8571218D2068692800265CB7 /* ItemListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTests.swift; sourceTree = "<group>"; };
 		857121902068699900265CB7 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		DA0AEB1A206DBD0F00A8BED4 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
 		DA0AEB1C206DBD4D00A8BED4 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		8571218C206868FA00265CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8571218D2068692800265CB7 /* ItemListViewControllerTest.swift */,
+				8571218D2068692800265CB7 /* ItemListViewControllerTests.swift */,
 				DA1C829A20689CBE00D10A28 /* ItemListDataProviderTests.swift */,
 				DA6221B2206CAC7C00694DA1 /* ItemCellTests.swift */,
 				DA6221B4206CE61400694DA1 /* DetailViewControllerTests.swift */,
@@ -396,7 +396,7 @@
 				DA6221B3206CAC7C00694DA1 /* ItemCellTests.swift in Sources */,
 				854DE7222067180400B0750F /* LocationTests.swift in Sources */,
 				DA0AEB1B206DBD0F00A8BED4 /* InputViewControllerTests.swift in Sources */,
-				8571218E2068692800265CB7 /* ItemListViewControllerTest.swift in Sources */,
+				8571218E2068692800265CB7 /* ItemListViewControllerTests.swift in Sources */,
 				DA6221B5206CE61400694DA1 /* DetailViewControllerTests.swift in Sources */,
 				DA71E5E6207218E9001C4B63 /* StoryboardTests.swift in Sources */,
 				DA8BFEB5206DEFFD0080C613 /* APIClientTests.swift in Sources */,
