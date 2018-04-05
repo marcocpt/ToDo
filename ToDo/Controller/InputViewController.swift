@@ -21,7 +21,7 @@ class InputViewController: UIViewController {
   lazy var geocoder = CLGeocoder()
   var itemManager: ItemManager?
   
-  @IBAction func save() {
+  @objc @IBAction func save() {
     guard let titleString = titleTextField.text,
       titleString.count > 0 else { return }
     

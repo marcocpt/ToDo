@@ -104,6 +104,11 @@ class ItemListDataProvider: NSObject, ItemManagerSettable,
 }
 
 
+protocol ItemManagerSettable {
+  var itemManager: ItemManager? { get set }
+}
+
+
 enum Section: Int {
   case toDo
   case done

@@ -90,10 +90,12 @@ class ItemListViewControllerTests: XCTestCase {
   func test_ItemSelectedNotification_PushesDetailVC() {
     let mockNavigationController =
       MockNavigationController(rootViewController: sut)
-    UIApplication.shared.keyWindow?.rootViewController =
-    mockNavigationController
-//    sut.loadViewIfNeeded()
-    _ = sut.view
+    UIApplication.shared.keyWindow?.rootViewController = mockNavigationController
+    
+    sut.loadViewIfNeeded()
+    sut.itemManager.add(ToDoItem(title: "foo"))
+    sut.itemManager.add(ToDoItem(title: "bar"))
+
     NotificationCenter.default.post(
       name: NSNotification.Name("ItemSelectedNotification"),
       object: self,
