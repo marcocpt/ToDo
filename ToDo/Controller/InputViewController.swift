@@ -36,8 +36,8 @@ class InputViewController: UIViewController {
     if let locationName = locationTextField.text, locationName.count > 0,
       let address = addressTextField.text, address.count > 0 {
       geocoder.geocodeAddressString(address) {
-        [weak self] (placeMarks, error) -> Void in
-        guard let strongSelf = self else { return }
+        (placeMarks, error) -> Void in
+
         let placeMark = placeMarks?.first
         let item = ToDoItem(
           title: titleString,
@@ -45,10 +45,12 @@ class InputViewController: UIViewController {
           timestamp: date?.timeIntervalSince1970,
           location: Location(
             name: locationName,
-            coordinate: placeMark?.location?.coordinate
-          )
-        )
-        strongSelf.itemManager?.add(item)
+            coordinate: placeMark?.location?.coordinate))
+        
+        DispatchQueue.main.async(execute: {
+          self.itemManager?.add(item)
+          self.dismiss(animated: true)
+        })
       }
     } else {
       let item = ToDoItem(title: titleString,
@@ -56,8 +58,9 @@ class InputViewController: UIViewController {
                           timestamp: date?.timeIntervalSince1970,
                           location: nil)
       self.itemManager?.add(item)
+      dismiss(animated: true)
     }
     
-    dismiss(animated: true)
+//    dismiss(animated: true)
   }
 }
